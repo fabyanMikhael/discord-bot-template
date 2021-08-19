@@ -1,7 +1,13 @@
 ###############################
 '''this loads the "DISCORD_TOKEN" string from the .env file'''
 
-from dotenv import load_dotenv
+# you can remove this try-catch once you have python-dotenv installed
+try:
+    from dotenv import load_dotenv
+except:
+    raise ModuleNotFoundError(
+        "No module named 'dotenv'\nYou do not have the dotenv module installed!\nUse 'pip install python-dotenv' to install the module."
+    )
 import os
 
 load_dotenv() #Loads anything in .env file
