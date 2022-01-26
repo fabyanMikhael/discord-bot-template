@@ -33,6 +33,8 @@ bot = commands.Bot(
 @bot.event # @bot.event attaches the function to the bot's event listener. 
 async def on_ready(): #the name of the function denotes which event it listens to
     print(f"{bot.user.name} has connected to Discord!")
+    from Utils.HotReload import HotLoad
+    await HotLoad(bot) # will load the cogs and enable hot-reload
 
 @bot.event
 async def on_message(message : discord.Message):
